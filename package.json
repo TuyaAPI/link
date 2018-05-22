@@ -1,0 +1,57 @@
+{
+  "name": "@tuyapi/register",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "xo": {
+    "space": true,
+    "ignores": [
+      "docs"
+    ],
+    "rules": {
+      "max-len": [
+        "error",
+        {
+          "code": 90
+        }
+      ],
+      "indent": [
+        "error",
+        2,
+        {
+          "ObjectExpression": "first",
+          "ArrayExpression": "first"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TuyaAPI/register.git"
+  },
+  "keywords": [
+    "iot",
+    "tuya",
+    "udp"
+  ],
+  "author": "“Max <codetheweb@icloud.com> (https://maxisom.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TuyaAPI/register/issues"
+  },
+  "homepage": "https://github.com/TuyaAPI/register#readme",
+  "dependencies": {
+    "@tuyapi/cloud": "^0.1.1",
+    "debug": "^3.1.0",
+    "delay": "^2.0.0"
+  },
+  "devDependencies": {
+    "xo": "^0.21.1"
+  }
+}
