@@ -1,7 +1,9 @@
-tuyapi/cloud [![Build Status](https://travis-ci.org/TuyaAPI/register.svg?branch=master)](https://travis-ci.org/TuyaAPI/register) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
+tuyapi/register [![Build Status](https://travis-ci.org/TuyaAPI/register.svg?branch=master)](https://travis-ci.org/TuyaAPI/register) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 ==============
 
-A NodeJS wrapper for Tuya's [cloud API](https://docs.tuya.com/en/cloudapi/cloudAPI/index.html).
+A package for connecting a Tuya device to WiFi and the cloud. This package is split up into two sub-modules:
+- **`(@tuyapi/register).manual`**: this is a low-level interface for registering devices.
+- **`(@tuyapi/register).wizard`**: this is a wrapper that combines `(@tuyapi/register).manual` and `@tuyapi/cloud`, making it super easy to register devices. It Just Works™️.
 
 ## Installation
 `npm i @tuyapi/register`
