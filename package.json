@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "xo"
+    "test": "xo",
+    "document": "documentation build *.js -f html -o docs"
   },
   "engines": {
     "node": ">=8.0.0"
