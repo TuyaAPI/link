@@ -1,11 +1,12 @@
 const Cloud = require('@tuyapi/cloud');
-const debug = require('debug')('TuyaRegisterWizard');
-const TuyaRegister = require('./register.js');
+const debug = require('debug')('TuyaLinkWizard');
+const TuyaLink = require('./lib/link.js');
 
 /**
-* A wrapper that combines @tuyapi/cloud and
-* TuyaRegister.manual (included in this package)
-* to make registration Just Work™️.
+* A wrapper that combines `@tuyapi/cloud` and
+* `(@tuyapi/link).manual` (included in this package)
+* to make registration Just Work™️. Exported as
+* `(@tuyapi/link).wizard`.
 * @class
 * @param {Object} options construction options
 * @param {String} options.apiKey API key
@@ -16,12 +17,12 @@ const TuyaRegister = require('./register.js');
 * @param {String} [options.timezone='-05:00'] timezone of device
 * @example
 * // Note: user account does not need to already exist
-* const register = new TuyaRegister.wizard({key: 'your-api-key',
+* const register = new TuyaLink.wizard({key: 'your-api-key',
 *                                           secret: 'your-api-secret',
 *                                           email: 'example@example.com',
 *                                           password: 'example-password'});
 */
-function TuyaRegisterWizard(options) {
+function TuyaLinkWizard(options) {
   // Set to empty object if undefined
   options = options ? options : {};
 
@@ -42,8 +43,8 @@ function TuyaRegisterWizard(options) {
                         secret: options.apiSecret,
                         region: this.region});
 
-  // Construct instance of TuyaRegister
-  this.device = new TuyaRegister();
+  // Construct instance of TuyaLink
+  this.device = new TuyaLink();
 }
 
 /**
@@ -52,25 +53,22 @@ function TuyaRegisterWizard(options) {
 * register.init()
 * @returns {Promise<String>} A Promise that contains the session ID
 */
-TuyaRegisterWizard.prototype.init = function () {
+TuyaLinkWizard.prototype.init = function () {
+  // Register/login user
   return this.api.register({email: this.email, password: this.password});
 };
-
-// Options.ssid
-// options.wifipassword
-// options.#of devices | 1
 
 /**
 * Links device to WiFi and cloud
 * @param {Object} options
-* request options
+* options
 * @param {String} options.ssid
 * the SSID to send to the device
 * @param {String} options.wifiPassword
 * password for the SSID
 * @param {Number} [options.devices=1]
-* if registering more than 1 device at a time,
-* set to number of devices being registered
+* if linking more than 1 device at a time,
+* set to number of devices being linked
 * @example
 * register.linkDevice({ssid: 'HOME-C168',
                        wifiPassword: '795F48E494285B6A'}).then(device => {
@@ -78,7 +76,7 @@ TuyaRegisterWizard.prototype.init = function () {
 * });
 * @returns {Promise<Object>} A Promise that contains data on device(s)
 */
-TuyaRegisterWizard.prototype.linkDevice = async function (options) {
+TuyaLinkWizard.prototype.linkDevice = async function (options) {
   if (!options.ssid || !options.wifiPassword) {
     throw new Error('Both SSID and WiFI password must be provided');
   }
@@ -115,4 +113,4 @@ TuyaRegisterWizard.prototype.linkDevice = async function (options) {
   }
 };
 
-module.exports = {wizard: TuyaRegisterWizard, manual: TuyaRegister};
+module.exports = {wizard: TuyaLinkWizard, manual: TuyaLink};
