@@ -2,8 +2,8 @@ tuyapi/link [![Build Status](https://travis-ci.org/TuyaAPI/link.svg?branch=maste
 ==============
 
 A package for connecting a Tuya device to WiFi and the cloud. This package is split up into two sub-modules:
-- **`(@tuyapi/register).manual`**: a low-level interface for registering devices.
-- **`(@tuyapi/register).wizard`**: a wrapper that combines `(@tuyapi/register).manual` and `@tuyapi/cloud`, making it super easy to register devices. It Just Works™️.
+- **`(@tuyapi/link).manual`**: a low-level interface for linking devices.
+- **`(@tuyapi/link).wizard`**: a wrapper that combines `(@tuyapi/link).manual` and `@tuyapi/cloud`, making it super easy to link devices. It Just Works™️.
 
 ## Installation
 `npm i @tuyapi/link`
