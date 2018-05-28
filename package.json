@@ -1,5 +1,5 @@
 {
-  "name": "@tuyapi/register",
+  "name": "@tuyapi/link",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TuyaAPI/register.git"
+    "url": "git+https://github.com/TuyaAPI/link.git"
   },
   "keywords": [
     "iot",
@@ -44,9 +44,9 @@
   "author": "“Max <codetheweb@icloud.com> (https://maxisom.me)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TuyaAPI/register/issues"
+    "url": "https://github.com/TuyaAPI/link/issues"
   },
-  "homepage": "https://github.com/TuyaAPI/register#readme",
+  "homepage": "https://github.com/TuyaAPI/link#readme",
   "dependencies": {
     "@tuyapi/cloud": "^0.1.1",
     "debug": "^3.1.0",
