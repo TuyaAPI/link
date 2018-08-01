@@ -109,7 +109,7 @@ TuyaLinkWizard.prototype.linkDevice = async function (options) {
     return devices;
   } catch (err) {
     this.device.cleanup();
-    return err;
+    throw err;
   }
 };
 
