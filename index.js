@@ -1,5 +1,5 @@
 const Cloud = require('@tuyapi/cloud');
-const debug = require('debug')('TuyaLinkWizard');
+const debug = require('debug')('@tuyapi/link/wizard');
 const TuyaLink = require('./lib/link.js');
 
 /**
@@ -70,8 +70,8 @@ TuyaLinkWizard.prototype.init = function () {
 * if linking more than 1 device at a time,
 * set to number of devices being linked
 * @example
-* register.linkDevice({ssid: 'HOME-C168',
-                       wifiPassword: '795F48E494285B6A'}).then(device => {
+* register.linkDevice({ssid: 'example-ssid',
+                       wifiPassword: 'example-password'}).then(device => {
 *   console.log(device);
 * });
 * @returns {Promise<Object>} A Promise that contains data on device(s)
