@@ -1,5 +1,5 @@
 const Cloud = require('@tuyapi/cloud');
-const debug = require('debug')('@tuyapi/link/wizard');
+const debug = require('debug')('@tuyapi/link:wizard');
 const TuyaLink = require('./lib/link.js');
 
 /**
