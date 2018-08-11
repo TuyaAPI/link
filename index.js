@@ -90,7 +90,7 @@ TuyaLinkWizard.prototype.linkDevice = async function (options) {
 
     debug('Token: ', token);
 
-    var register = this.device.registerSmartLink({region: this.region,
+    let register = this.device.registerSmartLink({region: this.region,
                                          token: token.token,
                                          secret: token.secret,
                                          ssid: options.ssid,
