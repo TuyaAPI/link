@@ -90,7 +90,7 @@ TuyaLinkWizard.prototype.linkDevice = async function (options) {
 
     debug('Token: ', token);
 
-    await this.device.registerSmartLink({region: this.region,
+    var register = this.device.registerSmartLink({region: this.region,
                                          token: token.token,
                                          secret: token.secret,
                                          ssid: options.ssid,
@@ -102,6 +102,9 @@ TuyaLinkWizard.prototype.linkDevice = async function (options) {
     const devices = await this.api.waitForToken({token: token.token,
                                                  devices: options.devices});
     debug('Found device(s)!', devices);
+    
+    this.device.abort();
+    await(register);
 
     // Remove binding on socket
     this.device.cleanup();
