@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>@tuyapi/link 0.1.0 | Documentation</title>
+  <title>@tuyapi/link 0.1.5 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -14,7 +14,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>@tuyapi/link</h3>
-          <div class='mb1'><code>0.1.0</code></div>
+          <div class='mb1'><code>0.1.5</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -90,6 +90,12 @@
                       </a></li>
                       
                       <li><a
+                        href='#tuyalinkabortbroadcastingdata'
+                        class='regular pre-open'>
+                        #abortBroadcastingData
+                      </a></li>
+                      
+                      <li><a
                         href='#tuyalinksmartlinkencode'
                         class='regular pre-open'>
                         #smartLinkEncode
@@ -119,7 +125,7 @@
       <div id='split-right' class='relative overflow-auto height-viewport-100'>
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+          <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
   <div class='clearfix'>
@@ -137,8 +143,10 @@
 to make registration Just Work™️. Exported as
 <code>(@tuyapi/link).wizard</code>.</p>
 
-
-  <div class='pre p1 fill-light mt0'>new TuyaLinkWizard(options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+ 
+  
+    <div class='pre p1 fill-light mt0'>new TuyaLinkWizard(options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+   
   
   
 
@@ -155,7 +163,7 @@ to make registration Just Work™️. Exported as
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
 	    construction options
 
           </div>
@@ -174,7 +182,7 @@ to make registration Just Work™️. Exported as
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.apiKey</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.apiKey</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>API key
 </span></td>
@@ -183,7 +191,7 @@ to make registration Just Work™️. Exported as
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.apiSecret</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.apiSecret</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>API secret
 </span></td>
@@ -192,7 +200,7 @@ to make registration Just Work™️. Exported as
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.email</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.email</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>user email
 </span></td>
@@ -201,7 +209,7 @@ to make registration Just Work™️. Exported as
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.password</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.password</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>user password
 </span></td>
@@ -210,7 +218,7 @@ to make registration Just Work™️. Exported as
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.region</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.region</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   
     (default <code>&#39;AZ&#39;</code>)
   </td>
@@ -221,7 +229,7 @@ to make registration Just Work™️. Exported as
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.timezone</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.timezone</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   
     (default <code>&#39;-05:00&#39;</code>)
   </td>
@@ -277,8 +285,10 @@ to make registration Just Work™️. Exported as
 
   <p>Logins to Tuya cloud using credentials provided to constructor</p>
 
-
-  <div class='pre p1 fill-light mt0'>init(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>></div>
+ 
+  
+    <div class='pre p1 fill-light mt0'>init(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>></div>
+   
   
   
 
@@ -296,7 +306,7 @@ to make registration Just Work™️. Exported as
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>></code>:
         A Promise that contains the session ID
 
       
@@ -337,8 +347,10 @@ to make registration Just Work™️. Exported as
 
   <p>Links device to WiFi and cloud</p>
 
-
-  <div class='pre p1 fill-light mt0'>linkDevice(options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></div>
+ 
+  
+    <div class='pre p1 fill-light mt0'>linkDevice(options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></div>
+   
   
   
 
@@ -355,7 +367,7 @@ to make registration Just Work™️. Exported as
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
 	    options
 
           </div>
@@ -374,7 +386,7 @@ to make registration Just Work™️. Exported as
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.ssid</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.ssid</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>the SSID to send to the device
 </span></td>
@@ -383,7 +395,7 @@ to make registration Just Work™️. Exported as
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.wifiPassword</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.wifiPassword</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>password for the SSID
 </span></td>
@@ -392,7 +404,7 @@ to make registration Just Work™️. Exported as
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.devices</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  <td class='break-word'><span class='code bold'>options.devices</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   
     (default <code>1</code>)
   </td>
@@ -416,7 +428,7 @@ set to number of devices being linked
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></code>:
         A Promise that contains data on device(s)
 
       
@@ -429,8 +441,8 @@ set to number of devices being linked
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>register.linkDevice({<span class="hljs-attr">ssid</span>: <span class="hljs-string">'HOME-C168'</span>,
-<span class="hljs-attr">wifiPassword</span>: <span class="hljs-string">'795F48E494285B6A'</span>}).then(<span class="hljs-function"><span class="hljs-params">device</span> =&gt;</span> {
+      <pre class='p1 overflow-auto round fill-light'>register.linkDevice({<span class="hljs-attr">ssid</span>: <span class="hljs-string">'example-ssid'</span>,
+<span class="hljs-attr">wifiPassword</span>: <span class="hljs-string">'example-password'</span>}).then(<span class="hljs-function"><span class="hljs-params">device</span> =&gt;</span> {
   <span class="hljs-built_in">console</span>.log(device);
 });</pre>
     
@@ -453,10 +465,9 @@ set to number of devices being linked
   
 </section>
 
-          
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+          <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
   <div class='clearfix'>
@@ -476,8 +487,10 @@ as <code>(@tuyapi/link).manual</code>.
 Currently has no options, but some may
 be added in the future.</p>
 
-
-  <div class='pre p1 fill-light mt0'>new TuyaLink(options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+ 
+  
+    <div class='pre p1 fill-light mt0'>new TuyaLink(options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
+   
   
   
 
@@ -494,7 +507,7 @@ be added in the future.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
 	    construction options
 
           </div>
@@ -542,8 +555,10 @@ have a special use case, prefer this method
 over calling this.sendSmartLinkStart() and
 this.sendSmartLinkData() directly.</p>
 
-
-  <div class='pre p1 fill-light mt0'>registerSmartLink(options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></div>
+ 
+  
+    <div class='pre p1 fill-light mt0'>registerSmartLink(options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></div>
+   
   
   
 
@@ -560,7 +575,7 @@ this.sendSmartLinkData() directly.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
 	    options
 
           </div>
@@ -579,7 +594,7 @@ this.sendSmartLinkData() directly.</p>
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.region</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.region</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>region (see smartLinkEncode() for options)
 </span></td>
@@ -588,7 +603,7 @@ this.sendSmartLinkData() directly.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.token</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.token</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>generated token to send
 </span></td>
@@ -597,7 +612,7 @@ this.sendSmartLinkData() directly.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.secret</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.secret</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>generated secret to send
 </span></td>
@@ -606,7 +621,7 @@ this.sendSmartLinkData() directly.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.ssid</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.ssid</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>SSID to connect to
 </span></td>
@@ -615,7 +630,7 @@ this.sendSmartLinkData() directly.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.wifiPassword</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.wifiPassword</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>password of WiFi
 </span></td>
@@ -636,7 +651,7 @@ this.sendSmartLinkData() directly.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></code>:
         A Promise that resolves when all data has been transmitted
 
       
@@ -685,8 +700,10 @@ this.sendSmartLinkData() directly.</p>
 (1, 3, 6, 10) 144 times with
 a delay between transmits.</p>
 
-
-  <div class='pre p1 fill-light mt0'>sendSmartLinkStart(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></div>
+ 
+  
+    <div class='pre p1 fill-light mt0'>sendSmartLinkStart(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></div>
+   
   
   
 
@@ -704,7 +721,7 @@ a delay between transmits.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></code>:
         A Promise that resolves when data has been transmitted
 
       
@@ -742,8 +759,10 @@ as UDP packet lengths 30
 times with a delay between
 transmits.</p>
 
-
-  <div class='pre p1 fill-light mt0'>sendSmartLinkData(data: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></div>
+ 
+  
+    <div class='pre p1 fill-light mt0'>sendSmartLinkData(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></div>
+   
   
   
 
@@ -760,7 +779,7 @@ transmits.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
 	    of packet lengths to send
 
           </div>
@@ -775,11 +794,59 @@ transmits.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></code>:
         A Promise that resolves when data has been transmitted
 
       
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='tuyalinkabortbroadcastingdata'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>abortBroadcastingData()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Aborts broadcasting UDP packets.</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>abortBroadcastingData()</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
   
 
   
@@ -811,8 +878,10 @@ transmits.</p>
   <p>Encodes data as UDP packet
 lengths.</p>
 
-
-  <div class='pre p1 fill-light mt0'>smartLinkEncode(options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+ 
+  
+    <div class='pre p1 fill-light mt0'>smartLinkEncode(options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+   
   
   
 
@@ -829,7 +898,7 @@ lengths.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
 	    options
 
           </div>
@@ -848,7 +917,7 @@ lengths.</p>
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.region</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.region</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>two-letter region (AZ=Americas, AY=Asia, EU=Europe)
 </span></td>
@@ -857,7 +926,7 @@ lengths.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.token</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.token</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>token
 </span></td>
@@ -866,7 +935,7 @@ lengths.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.secret</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.secret</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>secret
 </span></td>
@@ -875,7 +944,7 @@ lengths.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.ssid</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.ssid</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>SSID
 </span></td>
@@ -884,7 +953,7 @@ lengths.</p>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.wifiPassword</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  <td class='break-word'><span class='code bold'>options.wifiPassword</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>password of WiFi
 </span></td>
@@ -905,7 +974,7 @@ lengths.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
         array of packet lengths
 
       
@@ -942,8 +1011,10 @@ lengths.</p>
 so that a script can cleanly
 exit.</p>
 
-
-  <div class='pre p1 fill-light mt0'>cleanup()</div>
+ 
+  
+    <div class='pre p1 fill-light mt0'>cleanup()</div>
+   
   
   
 
@@ -981,7 +1052,6 @@ exit.</p>
   
 </section>
 
-          
         
       </div>
     </div>
