@@ -48,7 +48,7 @@
   },
   "homepage": "https://github.com/TuyaAPI/link#readme",
   "dependencies": {
-    "@tuyapi/cloud": "^0.2.2",
+    "@tuyapi/openapi": "^0.1.2",
     "debug": "^3.1.0",
     "delay": "^2.0.0"
   },

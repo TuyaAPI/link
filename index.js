@@ -1,9 +1,9 @@
-const Cloud = require('@tuyapi/cloud');
+const Cloud = require('@tuyapi/openapi');
 const debug = require('debug')('@tuyapi/link:wizard');
 const TuyaLink = require('./lib/link.js');
 
 /**
-* A wrapper that combines `@tuyapi/cloud` and
+* A wrapper that combines `@tuyapi/openapi` and
 * `(@tuyapi/link).manual` (included in this package)
 * to make registration Just Work™️. Exported as
 * `(@tuyapi/link).wizard`.
@@ -38,10 +38,8 @@ function TuyaLinkWizard(options) {
   this.timezone = options.timezone ? options.timezone : '-05:00';
 
   // Don't need to check key and secret for correct format as
-  // tuyapi/cloud already does
-  this.api = new Cloud({key: options.apiKey,
-                        secret: options.apiSecret,
-                        region: this.region});
+  // tuyapi/openapi already does
+  this.api = new Cloud({key: options.apiKey, secret: options.apiSecret, schema: options.schema});
 
   // Construct instance of TuyaLink
   this.device = new TuyaLink();
@@ -53,9 +51,11 @@ function TuyaLinkWizard(options) {
 * register.init()
 * @returns {Promise<String>} A Promise that contains the session ID
 */
-TuyaLinkWizard.prototype.init = function () {
+TuyaLinkWizard.prototype.init = async function () {
   // Register/login user
-  return this.api.register({email: this.email, password: this.password});
+  await this.api.getToken();
+
+  this.uid = await this.api.putUser({countryCode: '1', username: this.email, password: this.password, usernameType: 2});
 };
 
 /**
@@ -77,16 +77,17 @@ TuyaLinkWizard.prototype.init = function () {
 * @returns {Promise<Object>} A Promise that contains data on device(s)
 */
 TuyaLinkWizard.prototype.linkDevice = async function (options) {
-  if (!options.ssid || !options.wifiPassword) {
-    throw new Error('Both SSID and WiFI password must be provided');
+  if (!options.ssid) {
+    throw new Error('SSID must be provided');
   }
 
   // Default for options.devices
   options.devices = options.devices ? options.devices : 1;
 
   try {
-    const token = await this.api.request({action: 'tuya.m.device.token.create',
-                                          data: {timeZone: this.timezone}});
+    const token = await this.api.getDeviceToken({uid: this.uid, timezone: this.timezone})
+
+    // {action: 'tuya.m.device.token.create',  data: {timeZone: this.timezone}});
 
     debug('Token: ', token);
 
@@ -99,8 +100,16 @@ TuyaLinkWizard.prototype.linkDevice = async function (options) {
     // While UDP packets are being sent, start polling for device
     debug('Polling cloud for details on token...');
 
-    const devices = await this.api.waitForToken({token: token.token,
-                                                 devices: options.devices});
+    const devices = [];
+
+    const waitingForDevices = true;
+
+    while (waitingForDevices) {
+      const d = await this.api.getDevicesByToken(token.token)
+      debug('Got response:', d)
+    }
+
+
     debug('Found device(s)!', devices);
 
     // Stop broadcasting setup data
