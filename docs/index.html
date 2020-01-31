@@ -1,20 +1,21 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <meta charset='utf-8' />
-  <title>@tuyapi/link 0.2.1 | Documentation</title>
+  <meta charset='utf-8'>
+  <title>@tuyapi/link 0.3.0 | Documentation</title>
+  <meta name='description' content='📡 Effortlessly connect devices to WiFi and the cloud'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
-  <link href='assets/style.css' type='text/css' rel='stylesheet' />
-  <link href='assets/github.css' type='text/css' rel='stylesheet' />
-  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+  <link href='assets/bass.css' rel='stylesheet'>
+  <link href='assets/style.css' rel='stylesheet'>
+  <link href='assets/github.css' rel='stylesheet'>
+  <link href='assets/split.css' rel='stylesheet'>
 </head>
 <body class='documentation m0'>
     <div class='flex'>
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>@tuyapi/link</h3>
-          <div class='mb1'><code>0.2.1</code></div>
+          <div class='mb1'><code>0.3.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -118,7 +119,7 @@
             </ul>
           </div>
           <div class='mt1 h6 quiet'>
-            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+            <a href='https://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
           </div>
         </div>
       </div>
@@ -138,15 +139,12 @@
   </div>
   
 
-  <p>A wrapper that combines <code>@tuyapi/cloud</code> and
+  <p>A wrapper that combines <code>@tuyapi/openapi</code> and
 <code>(@tuyapi/link).manual</code> (included in this package)
 to make registration Just Work™️. Exported as
 <code>(@tuyapi/link).wizard</code>.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>new TuyaLinkWizard(options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
-   
   
   
 
@@ -163,7 +161,8 @@ to make registration Just Work™️. Exported as
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
 	    construction options
 
           </div>
@@ -180,24 +179,6 @@ to make registration Just Work™️. Exported as
               </tr>
             </thead>
             <tbody class='mt1'>
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>options.apiKey</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
-  </td>
-  <td class='break-word'><span>API key
-</span></td>
-</tr>
-
-
-              
-                <tr>
-  <td class='break-word'><span class='code bold'>options.apiSecret</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
-  </td>
-  <td class='break-word'><span>API secret
-</span></td>
-</tr>
-
-
               
                 <tr>
   <td class='break-word'><span class='code bold'>options.email</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
@@ -234,6 +215,33 @@ to make registration Just Work™️. Exported as
     (default <code>&#39;-05:00&#39;</code>)
   </td>
   <td class='break-word'><span>timezone of device
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.apiKey</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>API key
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.apiSecret</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>API secret
+</span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.schema</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  </td>
+  <td class='break-word'><span>app schema to register the device under
 </span></td>
 </tr>
 
@@ -285,10 +293,7 @@ to make registration Just Work™️. Exported as
 
   <p>Logins to Tuya cloud using credentials provided to constructor</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>init(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>></div>
-   
   
   
 
@@ -328,6 +333,8 @@ to make registration Just Work™️. Exported as
   
 
   
+
+  
 </section>
 
       </div>
@@ -347,10 +354,7 @@ to make registration Just Work™️. Exported as
 
   <p>Links device to WiFi and cloud</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>linkDevice(options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>></div>
-   
   
   
 
@@ -367,7 +371,8 @@ to make registration Just Work™️. Exported as
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
 	    options
 
           </div>
@@ -386,6 +391,18 @@ to make registration Just Work™️. Exported as
             <tbody class='mt1'>
               
                 <tr>
+  <td class='break-word'><span class='code bold'>options.timeout</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
+  
+    (default <code>60</code>)
+  </td>
+  <td class='break-word'><span>how long we should wait for devices to
+connect before throwing an error, in seconds
+</span></td>
+</tr>
+
+
+              
+                <tr>
   <td class='break-word'><span class='code bold'>options.ssid</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
   <td class='break-word'><span>the SSID to send to the device
@@ -396,6 +413,8 @@ to make registration Just Work™️. Exported as
               
                 <tr>
   <td class='break-word'><span class='code bold'>options.wifiPassword</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+  
+    (default <code>&#39;&#39;</code>)
   </td>
   <td class='break-word'><span>password for the SSID
 </span></td>
@@ -453,6 +472,8 @@ set to number of devices being linked
   
 
   
+
+  
 </section>
 
       </div>
@@ -463,8 +484,11 @@ set to number of devices being linked
   
 
   
+
+  
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -483,14 +507,9 @@ set to number of devices being linked
   <p>A lower level option for linking
 devices. Use only if you're not generating
 a token through <code>@tuyapi/cloud</code>. Exported
-as <code>(@tuyapi/link).manual</code>.
-Currently has no options, but some may
-be added in the future.</p>
+as <code>(@tuyapi/link).manual</code>.</p>
 
- 
-  
-    <div class='pre p1 fill-light mt0'>new TuyaLink(options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
-   
+    <div class='pre p1 fill-light mt0'>new TuyaLink()</div>
   
   
 
@@ -501,20 +520,6 @@ be added in the future.</p>
   
   
 
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    construction options
-
-          </div>
-          
-        </div>
-      
-    </div>
   
 
   
@@ -527,7 +532,7 @@ be added in the future.</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> register = <span class="hljs-keyword">new</span> TuyaLink.manual({});</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> register = <span class="hljs-keyword">new</span> TuyaLink.manual();</pre>
     
   
 
@@ -555,10 +560,7 @@ have a special use case, prefer this method
 over calling this.sendSmartLinkStart() and
 this.sendSmartLinkData() directly.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>registerSmartLink(options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></div>
-   
   
   
 
@@ -679,6 +681,8 @@ this.sendSmartLinkData() directly.</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -697,13 +701,10 @@ this.sendSmartLinkData() directly.</p>
   
 
   <p>Transmits start pattern of packets
-(1, 3, 6, 10) 144 times with
+(1, 3, 6, 10) 32 times with
 a delay between transmits.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>sendSmartLinkStart(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></div>
-   
   
   
 
@@ -737,6 +738,8 @@ a delay between transmits.</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -759,10 +762,7 @@ as UDP packet lengths 30
 times with a delay between
 transmits.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>sendSmartLinkData(data: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined">Undefined</a>></div>
-   
   
   
 
@@ -810,6 +810,8 @@ transmits.</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -829,10 +831,7 @@ transmits.</p>
 
   <p>Aborts broadcasting UDP packets.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>abortBroadcastingData()</div>
-   
   
   
 
@@ -841,6 +840,8 @@ transmits.</p>
   
   
   
+  
+
   
 
   
@@ -878,10 +879,7 @@ transmits.</p>
   <p>Encodes data as UDP packet
 lengths.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>smartLinkEncode(options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
-   
   
   
 
@@ -990,6 +988,8 @@ lengths.</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -1011,10 +1011,7 @@ lengths.</p>
 so that a script can cleanly
 exit.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>cleanup()</div>
-   
   
   
 
@@ -1023,6 +1020,8 @@ exit.</p>
   
   
   
+  
+
   
 
   
@@ -1050,8 +1049,11 @@ exit.</p>
   
 
   
+
+  
 </section>
 
+          
         
       </div>
     </div>

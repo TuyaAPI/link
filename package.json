@@ -1,8 +1,9 @@
 {
   "name": "@tuyapi/link",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "📡 Effortlessly connect devices to WiFi and the cloud",
   "main": "index.js",
+  "files": ["index.js", "lib"],
   "scripts": {
     "test": "xo",
     "document": "documentation build *.js -f html -o docs"
@@ -16,12 +17,6 @@
       "docs"
     ],
     "rules": {
-      "max-len": [
-        "error",
-        {
-          "code": 90
-        }
-      ],
       "indent": [
         "error",
         2,
@@ -39,7 +34,10 @@
   "keywords": [
     "iot",
     "tuya",
-    "udp"
+    "udp",
+    "link",
+    "smartlink",
+    "wifi"
   ],
   "author": "“Max <codetheweb@icloud.com> (https://maxisom.me)",
   "license": "MIT",
@@ -49,10 +47,10 @@
   "homepage": "https://github.com/TuyaAPI/link#readme",
   "dependencies": {
     "@tuyapi/openapi": "^0.1.2",
-    "debug": "^3.1.0",
-    "delay": "^2.0.0"
+    "debug": "^4.1.1",
+    "delay": "^4.3.0"
   },
   "devDependencies": {
-    "xo": "^0.21.1"
+    "xo": "^0.25.3"
   }
 }
