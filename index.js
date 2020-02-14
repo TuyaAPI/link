@@ -86,7 +86,7 @@ class TuyaLinkWizard {
 
       debug('Token: ', token);
 
-      this.device.registerSmartLink({region: this.region,
+      this.device.registerSmartLink({region: token.region,
                                      token: token.token,
                                      secret: token.secret,
                                      ssid,
