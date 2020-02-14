@@ -3,7 +3,10 @@
   "version": "0.3.0",
   "description": "📡 Effortlessly connect devices to WiFi and the cloud",
   "main": "index.js",
-  "files": ["index.js", "lib"],
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "scripts": {
     "test": "xo",
     "document": "documentation build *.js -f html -o docs"
@@ -46,11 +49,11 @@
   },
   "homepage": "https://github.com/TuyaAPI/link#readme",
   "dependencies": {
-    "@tuyapi/openapi": "^0.1.2",
+    "@tuyapi/openapi": "^0.2.0",
     "debug": "^4.1.1",
     "delay": "^4.3.0"
   },
   "devDependencies": {
-    "xo": "^0.25.3"
+    "xo": "^0.26.1"
   }
 }

@@ -14,8 +14,8 @@ const TuyaLink = require('./lib/link.js');
  * @param {String} options.schema app schema to register the device under
  * @param {String} options.email user email
  * @param {String} options.password user password
- * @param {String} [options.region='AZ'] region (AZ=Americas, AY=Asia, EU=Europe)
- * @param {String} [options.timezone='-05:00'] timezone of device
+ * @param {String} [options.region='us'] region (us=Americas, cn=Asia, eu=Europe)
+ * @param {String} [options.timezone='America/Chicago'] timezone of device in tz format
  * @example
  * // Note: user account does not need to already exist
  * const register = new TuyaLink.wizard({key: 'your-api-key',
@@ -24,7 +24,7 @@ const TuyaLink = require('./lib/link.js');
  *                                           password: 'example-password'});
  */
 class TuyaLinkWizard {
-  constructor({email, password, region = 'AZ', timezone = '-05:00', apiKey, apiSecret, schema} = {}) {
+  constructor({email, password, region = 'us', timezone = 'America/Chicago', apiKey, apiSecret, schema} = {}) {
     if (!email || !password) {
       throw new Error('Both email and password must be provided');
     }
@@ -36,7 +36,7 @@ class TuyaLinkWizard {
 
     // Don't need to check key and secret for correct format as
     // tuyapi/openapi already does
-    this.api = new Cloud({key: apiKey, secret: apiSecret, schema});
+    this.api = new Cloud({key: apiKey, secret: apiSecret, region, schema});
 
     // Construct instance of TuyaLink
     this.device = new TuyaLink();
