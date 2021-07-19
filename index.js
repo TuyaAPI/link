@@ -140,8 +140,6 @@ class TuyaLinkWizard {
           method: 'GET'
         });
 
-        console.log(lastAPIResponse.result)
-
         if (!lastAPIResponse.success) {
           throw new Error(lastAPIResponse.msg);
         }
@@ -161,6 +159,7 @@ class TuyaLinkWizard {
           throw new Error('Timed out waiting for devices to connect.');
         }
 
+        // eslint-disable-next-line no-await-in-loop
         await delay(1000);
       }
 
