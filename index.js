@@ -1,9 +1,10 @@
-const Cloud = require('@tuyapi/openapi');
+const {TuyaContext} = require('@tuya/tuya-connector-nodejs');
+const delay = require('delay');
 const debug = require('debug')('@tuyapi/link:wizard');
 const TuyaLink = require('./lib/link.js');
 
 /**
- * A wrapper that combines `@tuyapi/openapi` and
+ * A wrapper that combines `@tuya/tuya-connector-nodejs` and
  * `(@tuyapi/link).manual` (included in this package)
  * to make registration Just Work™️. Exported as
  * `(@tuyapi/link).wizard`.
@@ -34,9 +35,12 @@ class TuyaLinkWizard {
     this.region = region;
     this.timezone = timezone;
 
-    // Don't need to check key and secret for correct format as
-    // tuyapi/openapi already does
-    this.api = new Cloud({key: apiKey, secret: apiSecret, region, schema});
+    this.api = new TuyaContext({
+      baseUrl: `https://openapi.tuya${region}.com`,
+      accessKey: apiKey,
+      secretKey: apiSecret
+    });
+    this.schema = schema;
 
     // Construct instance of TuyaLink
     this.device = new TuyaLink();
@@ -50,16 +54,31 @@ class TuyaLinkWizard {
    */
   async init() {
     // Register/login user
-    await this.api.getToken();
+    const result = await this.api.request({
+      path: `/v1.0/apps/${this.schema}/user`,
+      method: 'POST',
+      body: {
+        schema: this.schema,
+        country_code: '1',
+        username: this.email,
+        password: this.password,
+        username_type: 2,
+        nick_name: this.email
+      }
+    });
 
-    this.uid = await this.api.putUser({countryCode: '1', username: this.email, password: this.password, usernameType: 2});
+    if (!result.success) {
+      throw new Error(result.msg);
+    }
+
+    this.uid = result.result.uid;
   }
 
   /**
    * Links device to WiFi and cloud
    * @param {Object} options
    * options
-   * @param {Number} [options.timeout=60]
+   * @param {Number} [options.timeout=100]
    * how long we should wait for devices to
    * connect before throwing an error, in seconds
    * @param {String} options.ssid
@@ -76,13 +95,27 @@ class TuyaLinkWizard {
    * });
    * @returns {Promise<Object>} A Promise that contains data on device(s)
    */
-  async linkDevice({timeout = 60, ssid, wifiPassword = '', devices = 1} = {}) {
+  async linkDevice({timeout = 100, ssid, wifiPassword = '', devices = 1} = {}) {
     if (!ssid) {
       throw new Error('SSID must be provided');
     }
 
     try {
-      const token = await this.api.getDeviceToken({uid: this.uid, timezone: this.timezone});
+      const response = await this.api.request({
+        path: '/v1.0/device/paring/token',
+        method: 'POST',
+        body: {
+          uid: this.uid,
+          timeZoneId: this.timezone,
+          paring_type: 'EZ'
+        }
+      });
+
+      if (!response.success) {
+        throw new Error(response.msg);
+      }
+
+      const token = response.result;
 
       debug('Token: ', token);
 
@@ -102,11 +135,22 @@ class TuyaLinkWizard {
 
       while (waitingForDevices) {
         // eslint-disable-next-line no-await-in-loop
-        lastAPIResponse = await this.api.getDevicesByToken(token.token);
+        lastAPIResponse = await this.api.request({
+          path: `/v1.0/device/paring/tokens/${token.token}`,
+          method: 'GET'
+        });
 
-        debug(`${lastAPIResponse.successDevices.length} devices returned by API.`);
+        console.log(lastAPIResponse.result)
 
-        if (lastAPIResponse.successDevices.length >= devices) {
+        if (!lastAPIResponse.success) {
+          throw new Error(lastAPIResponse.msg);
+        }
+
+        const {result} = lastAPIResponse;
+
+        debug(`${result.success.length} devices returned by API.`);
+
+        if (result.success.length >= devices) {
           waitingForDevices = false;
         }
 
@@ -116,9 +160,11 @@ class TuyaLinkWizard {
         if (now > timeoutAt) {
           throw new Error('Timed out waiting for devices to connect.');
         }
+
+        await delay(1000);
       }
 
-      const returnedDevices = lastAPIResponse.successDevices;
+      const returnedDevices = lastAPIResponse.result.success;
 
       debug('Found device(s)!', returnedDevices);
 

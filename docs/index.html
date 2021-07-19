@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>@tuyapi/link 0.3.0 | Documentation</title>
+  <title>@tuyapi/link 0.3.3 | Documentation</title>
   <meta name='description' content='📡 Effortlessly connect devices to WiFi and the cloud'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,11 +15,14 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>@tuyapi/link</h3>
-          <div class='mb1'><code>0.3.0</code></div>
+          <div class='mb1'><code>0.3.3</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
             class='col12 block input'
+            spellcheck='false'
+            autocapitalize='off'
+            autocorrect='off'
             type='text' />
           <div id='toc'>
             <ul class='list-reset h5 py1-ul'>
@@ -139,7 +142,7 @@
   </div>
   
 
-  <p>A wrapper that combines <code>@tuyapi/openapi</code> and
+  <p>A wrapper that combines <code>@tuya/tuya-connector-nodejs</code> and
 <code>(@tuyapi/link).manual</code> (included in this package)
 to make registration Just Work™️. Exported as
 <code>(@tuyapi/link).wizard</code>.</p>
@@ -201,9 +204,9 @@ to make registration Just Work™️. Exported as
                 <tr>
   <td class='break-word'><span class='code bold'>options.region</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   
-    (default <code>&#39;AZ&#39;</code>)
+    (default <code>&#39;us&#39;</code>)
   </td>
-  <td class='break-word'><span>region (AZ=Americas, AY=Asia, EU=Europe)
+  <td class='break-word'><span>region (us=Americas, cn=Asia, eu=Europe)
 </span></td>
 </tr>
 
@@ -212,9 +215,9 @@ to make registration Just Work™️. Exported as
                 <tr>
   <td class='break-word'><span class='code bold'>options.timezone</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   
-    (default <code>&#39;-05:00&#39;</code>)
+    (default <code>&#39;America/Chicago&#39;</code>)
   </td>
-  <td class='break-word'><span>timezone of device
+  <td class='break-word'><span>timezone of device in tz format
 </span></td>
 </tr>
 
@@ -253,6 +256,8 @@ to make registration Just Work™️. Exported as
         </div>
       
     </div>
+  
+
   
 
   
@@ -316,6 +321,8 @@ to make registration Just Work™️. Exported as
 
       
     
+  
+
   
 
   
@@ -393,7 +400,7 @@ to make registration Just Work™️. Exported as
                 <tr>
   <td class='break-word'><span class='code bold'>options.timeout</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>
   
-    (default <code>60</code>)
+    (default <code>100</code>)
   </td>
   <td class='break-word'><span>how long we should wait for devices to
 connect before throwing an error, in seconds
@@ -452,6 +459,8 @@ set to number of devices being linked
 
       
     
+  
+
   
 
   
@@ -518,6 +527,8 @@ as <code>(@tuyapi/link).manual</code>.</p>
   
   
   
+  
+
   
 
   
@@ -663,6 +674,8 @@ this.sendSmartLinkData() directly.</p>
   
 
   
+
+  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -727,6 +740,8 @@ a delay between transmits.</p>
 
       
     
+  
+
   
 
   
@@ -812,6 +827,8 @@ transmits.</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -840,6 +857,8 @@ transmits.</p>
   
   
   
+  
+
   
 
   
@@ -917,7 +936,7 @@ lengths.</p>
                 <tr>
   <td class='break-word'><span class='code bold'>options.region</span> <code class='quiet'><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
   </td>
-  <td class='break-word'><span>two-letter region (AZ=Americas, AY=Asia, EU=Europe)
+  <td class='break-word'><span>two-letter region (AZ=Americas, CN=Asia, EU=Europe)
 </span></td>
 </tr>
 
@@ -990,6 +1009,8 @@ lengths.</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -1020,6 +1041,8 @@ exit.</p>
   
   
   
+  
+
   
 
   
