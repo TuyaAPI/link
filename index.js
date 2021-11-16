@@ -25,7 +25,7 @@ const TuyaLink = require('./lib/link.js');
  *                                           password: 'example-password'});
  */
 class TuyaLinkWizard {
-  constructor({email, password, region = 'us', timezone = 'America/Chicago', apiKey, apiSecret, schema} = {}) {
+  constructor({email, password, region = 'us', timezone = 'America/Chicago', apiKey, apiSecret, schema, bindAddr} = {}) {
     if (!email || !password) {
       throw new Error('Both email and password must be provided');
     }
@@ -34,6 +34,7 @@ class TuyaLinkWizard {
     this.password = password;
     this.region = region;
     this.timezone = timezone;
+    this.bindAddr = bindAddr;
 
     this.api = new TuyaContext({
       baseUrl: `https://openapi.tuya${region}.com`,
@@ -123,7 +124,8 @@ class TuyaLinkWizard {
                                      token: token.token,
                                      secret: token.secret,
                                      ssid,
-                                     wifiPassword});
+                                     wifiPassword,
+                                     bindAddr: this.bindAddr});
 
       // While UDP packets are being sent, start polling for device
       debug('Polling cloud for details on token...');
