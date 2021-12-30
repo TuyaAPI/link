@@ -181,6 +181,33 @@ class TuyaLinkWizard {
       throw error;
     }
   }
+
+  async getLinkedDevices({ ids, pageNumber = 0, pageSize = 100 } = { pageNumber: 0, pageSize: 100 }){
+
+    const searchParameters = {
+      schema: this.schema,
+      page_no: pageNumber,
+      page_size: pageSize
+    };
+    if (ids) {
+        searchParameters.device_ids = ids.toString();
+    }
+
+    const response = await this.api.request({
+      path: '/v1.0/devices',
+      method: 'GET',
+      query: searchParameters
+    });
+
+    if (!response.success) {
+      throw new Error(response.msg);
+    }
+
+    const batchDevices = response.result;
+    debug('Retrieved device(s)!', batchDevices);
+
+    return batchDevices
+  }
 }
 
 module.exports = {wizard: TuyaLinkWizard, manual: TuyaLink};
