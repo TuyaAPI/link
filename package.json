@@ -1,6 +1,6 @@
 {
   "name": "@tuyapi/link",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "description": "📡 Effortlessly connect devices to WiFi and the cloud",
   "main": "index.js",
   "files": [
